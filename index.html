@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="CloudSphere - Cloud Infrastructure and Documentation Hub">
+
+    <title>CloudSphere | Cloud Infrastructure & Documentation</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+
+    <header class="header">
+        <nav class="navbar">
+
+            <a href="#home" class="logo">
+                ☁ Cloud<span>Sphere</span>
+            </a>
+
+            <button class="menu-toggle" id="menuToggle"
+                aria-label="Toggle menu" aria-expanded="false">
+                ☰
+            </button>
+
+            <div class="nav-links" id="navLinks">
+                <a href="#home">Home</a>
+                <a href="#services">Documentation</a>
+                <a href="#architecture">Architecture</a>
+                <a href="#deployment">Deployment</a>
+                <a href="#security">Security</a>
+                <a href="#team">Our Team</a>
+            </div>
+
+            <button id="themeToggle" class="theme-btn"
+                aria-label="Change theme">
+                ☀
+            </button>
+
+        </nav>
+    </header>
+
+
+    <main>
+
+        <!-- HOME SECTION -->
+
+        <section id="home" class="hero">
+
+            <div class="hero-content">
+
+                <div class="badge">
+                    <span class="status-dot"></span>
+                    CLOUD INFRASTRUCTURE & DOCUMENTATION
+                </div>
+
+                <h1>
+                    Powering the Future of
+                    <span class="gradient-text">
+                        Cloud Innovation.
+                    </span>
+                </h1>
+
+                <p>
+                    Explore cloud infrastructure, secure storage,
+                    and global content delivery through modern
+                    AWS technologies.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#services" class="btn primary">
+                        Explore Documentation →
+                    </a>
+
+                    <a href="#architecture" class="btn secondary">
+                        Discover Architecture ↗
+                    </a>
+
+                </div>
+
+                <div class="hero-stats">
+
+                    <div>
+                        <h3>01</h3>
+                        <p>Cloud Storage</p>
+                    </div>
+
+                    <div>
+                        <h3>02</h3>
+                        <p>Global CDN</p>
+                    </div>
+
+                    <div>
+                        <h3>03</h3>
+                        <p>Secure HTTPS</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- AWS DOCUMENTATION -->
+
+        <section id="services" class="section">
+
+            <div class="container">
+
+                <p class="section-label">
+                    THE KNOWLEDGE BASE
+                </p>
+
+                <h2>
+                    Explore Cloud Services
+                    <span class="accent">.</span>
+                </h2>
+
+                <p class="section-description">
+                    Discover the essential building blocks
+                    of modern AWS cloud infrastructure.
+                </p>
+
+                <div class="search-container">
+
+                    <input
+                        type="search"
+                        id="serviceSearch"
+                        placeholder="Search AWS documentation..."
+                        aria-label="Search services">
+
+                </div>
+
+                <div class="filters">
+
+                    <button class="filter active" data-filter="all">
+                        All Services
+                    </button>
+
+                    <button class="filter" data-filter="Storage">
+                        Storage
+                    </button>
+
+                    <button class="filter" data-filter="Compute">
+                        Compute
+                    </button>
+
+                    <button class="filter" data-filter="Networking">
+                        Networking
+                    </button>
+
+                    <button class="filter" data-filter="Security">
+                        Security
+                    </button>
+
+                </div>
+
+                <div class="service-grid" id="serviceGrid"></div>
+
+                <p id="noResults" class="no-results" hidden>
+                    No matching services found.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ARCHITECTURE SECTION -->
+
+        <section id="architecture" class="section alternate">
+
+            <div class="container">
+
+                <p class="section-label">
+                    SYSTEM ARCHITECTURE
+                </p>
+
+                <h2>
+                    Designed for Secure Delivery
+                    <span class="accent">.</span>
+                </h2>
+
+                <p class="section-description">
+                    Explore how Amazon CloudFront delivers
+                    website content securely from a private
+                    Amazon S3 bucket.
+                </p>
+
+                <div class="architecture-layout">
+
+                    <div class="architecture-diagram">
+
+                        <button class="architecture-node selected"
+                            data-node="browser">
+
+                            <span class="node-icon">👤</span>
+
+                            <span>
+                                <strong>End User</strong>
+                                <small>Web Browser</small>
+                            </span>
+
+                        </button>
+
+                        <div class="arrow">
+                            <span>HTTPS / TLS</span>
+                            <div>↓</div>
+                        </div>
+
+                        <button class="architecture-node"
+                            data-node="cloudfront">
+
+                            <span class="node-icon">🌍</span>
+
+                            <span>
+                                <strong>Amazon CloudFront</strong>
+                                <small>
+                                    Global Content Delivery Network
+                                </small>
+                            </span>
+
+                        </button>
+
+                        <div class="arrow">
+                            <span>Origin Access Control (OAC)</span>
+                            <div>↓</div>
+                        </div>
+
+                        <button class="architecture-node"
+                            data-node="s3">
+
+                            <span class="node-icon">🗄</span>
+
+                            <span>
+                                <strong>Amazon S3</strong>
+                                <small>Private Cloud Storage</small>
+                            </span>
+
+                        </button>
+
+                    </div>
+
+
+                    <div class="architecture-details">
+
+                        <p class="section-label">
+                            ARCHITECTURE EXPLORER
+                        </p>
+
+                        <div class="detail-icon" id="detailIcon">
+                            👤
+                        </div>
+
+                        <h3 id="detailTitle">
+                            End User
+                        </h3>
+
+                        <p id="detailText">
+                            A visitor opens the website using a browser.
+                            The browser sends an HTTPS request to
+                            Amazon CloudFront.
+                        </p>
+
+                        <div class="info-box">
+                            ℹ Click any architecture component
+                            to explore how it works.
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- DEPLOYMENT SECTION -->
+
+        <section id="deployment" class="section">
+
+            <div class="container">
+
+                <p class="section-label">
+                    FROM CODE TO CLOUD
+                </p>
+
+                <h2>
+                    Deployment Workflow
+                    <span class="accent">.</span>
+                </h2>
+
+                <p class="section-description">
+                    A step-by-step workflow for deploying
+                    a secure static website using AWS.
+                </p>
+
+                <div class="steps-grid">
+
+                    <div class="step-card">
+
+                        <span>01</span>
+
+                        <h3>Website Development</h3>
+
+                        <p>
+                            Develop the documentation website using
+                            HTML, CSS, and JavaScript.
+                        </p>
+
+                    </div>
+
+                    <div class="step-card">
+
+                        <span>02</span>
+
+                        <h3>Amazon S3</h3>
+
+                        <p>
+                            Create a private S3 bucket and upload
+                            the website files.
+                        </p>
+
+                    </div>
+
+                    <div class="step-card">
+
+                        <span>03</span>
+
+                        <h3>Amazon CloudFront</h3>
+
+                        <p>
+                            Configure CloudFront with the S3 origin
+                            and Origin Access Control.
+                        </p>
+
+                    </div>
+
+                    <div class="step-card">
+
+                        <span>04</span>
+
+                        <h3>HTTPS Deployment</h3>
+
+                        <p>
+                            Configure the default root object,
+                            deploy the distribution,
+                            and verify HTTPS.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SECURITY SECTION -->
+
+        <section id="security" class="section alternate">
+
+            <div class="container">
+
+                <p class="section-label">
+                    CLOUD SECURITY
+                </p>
+
+                <h2>
+                    Security at Every Layer
+                    <span class="accent">.</span>
+                </h2>
+
+                <div class="security-grid">
+
+                    <div class="security-card">
+
+                        <div class="security-icon">🔒</div>
+
+                        <h3>HTTPS Encryption</h3>
+
+                        <p>
+                            HTTPS uses TLS to protect communication
+                            between the browser and CloudFront.
+                        </p>
+
+                    </div>
+
+                    <div class="security-card">
+
+                        <div class="security-icon">🛡</div>
+
+                        <h3>Private S3 Bucket</h3>
+
+                        <p>
+                            Website files remain private and are
+                            accessed through CloudFront.
+                        </p>
+
+                    </div>
+
+                    <div class="security-card">
+
+                        <div class="security-icon">🔑</div>
+
+                        <h3>Origin Access Control</h3>
+
+                        <p>
+                            OAC authorizes CloudFront to retrieve
+                            objects from the private S3 bucket.
+                        </p>
+
+                    </div>
+
+                    <div class="security-card">
+
+                        <div class="security-icon">⚡</div>
+
+                        <h3>Edge Caching</h3>
+
+                        <p>
+                            CloudFront caches static content at edge
+                            locations to improve delivery performance.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- OUR TEAM SECTION -->
+
+        <section id="team" class="section">
+
+            <div class="container">
+
+                <p class="section-label">
+                    PROJECT CONTRIBUTORS
+                </p>
+
+                <h2>
+                    Meet Our Team
+                    <span class="accent">.</span>
+                </h2>
+
+                <p class="section-description">
+                    CloudSphere is developed collaboratively
+                    by three Computer Engineering students.
+                </p>
+
+                <div class="team-grid">
+
+                    <!-- MEMBER 1 -->
+
+                    <div class="team-card">
+
+                        <div class="avatar">
+                            <img
+                                src="images/pratik.jpeg"
+                                alt="Pratik Shivade">
+                        </div>
+
+                        <h3>Pratik Shivade</h3>
+
+                        <p>Frontend Development</p>
+
+                    </div>
+
+
+                    <!-- MEMBER 2 -->
+
+                    <div class="team-card">
+
+                        <div class="avatar">
+                            <img
+                                src="images/Aniket.jpeg"
+                                alt="Aniket Todkar">
+                        </div>
+
+                        <h3>Aniket Todkar</h3>
+
+                        <p>Amazon S3 Configuration</p>
+
+                    </div>
+
+
+                    <!-- MEMBER 3 -->
+
+                    <div class="team-card">
+
+                        <div class="avatar">
+                            <img
+                                src="images/kaustubh.jpeg"
+                                alt="Kaustubh Waghmare">
+                        </div>
+
+                        <h3>Kaustubh Waghmare</h3>
+
+                        <p>CloudFront & Testing</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+
+        <h3>☁ CloudSphere</h3>
+
+        <p>Explore. Build. Deploy. Scale.</p>
+
+        <p>
+            Cloud Infrastructure & Documentation Hub
+        </p>
+
+        <p>
+            © <span id="year">2026</span> CloudSphere
+        </p>
+
+    </footer>
+
+
+    <!-- DOCUMENTATION POPUP -->
+
+    <dialog id="serviceDialog" class="service-dialog">
+
+        <button id="closeDialog"
+            class="close-dialog"
+            aria-label="Close">
+            ×
+        </button>
+
+        <p class="section-label" id="modalCategory"></p>
+
+        <h2 id="modalTitle"></h2>
+
+        <p id="modalDescription"></p>
+
+        <h3>How It Works</h3>
+
+        <p id="modalHow"></p>
+
+        <h3>Role in CloudSphere</h3>
+
+        <p id="modalRole"></p>
+
+        <button id="modalDone" class="btn primary">
+            Got It →
+        </button>
+
+    </dialog>
+
+</body>
+</html>
